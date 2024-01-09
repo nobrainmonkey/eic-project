@@ -1,0 +1,17 @@
+graph_nets
+tensorflow>=2.1.0-rc1
+dm-sonnet>=2.0.0b0
+tensorflow_probability
+matplotlib
+numpy
+uproot
+awkward
+compress_pickle
+scipy
+scikit-learn
+tqdm
+pandas
+h5py
+uproot3
+pyyaml
+seaborn
