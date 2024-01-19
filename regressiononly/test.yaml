@@ -1,13 +1,13 @@
 data:
-  already_preprocessed: True # True while simulating all cases
+  already_preprocessed: False # True while simulating all cases
   batch_size: 256
   calc_stats: True
-  data_dir: /home/xihe/eic-project/training_data/
+  data_dir: /Users/xihehan/eic-project/training_data/
   num_procs: 8
-  num_train_files: 15
+  num_train_files: 23
   num_val_files: 5
   num_test_files: 0 #0
-  output_dir: /home/xihe/eic-project/processed_data/
+  output_dir: /Users/xihehan/eic-project/processed_data/
   particle_type: pion
   preprocess: true
   shuffle: false
@@ -17,7 +17,7 @@ data:
   n_zsections: Null
   condition_zsections: False
   include_ecal: True
-  output_dim: 1
+  output_dim: 4
 model:
   block_type: deepsets  #deepsets #graphnet
   concat_input: true
@@ -35,11 +35,11 @@ model:
     use_nodes: true
     use_received_edges: true
     use_sent_edges: false # going out of the node , check get edges.
-  num_blocks: 1 # 2,3,4
+  num_blocks: 2 # 2,3,4
   num_layers: 4 # 2,3,4
-  latent_size:  64 #,128,256
+  latent_size:  128 #,128,256
   reducer: mean
 training:
   epochs: 60 # 10 epochs, 10 tr, 5 v and 5 ts
   learning_rate: 0.001
-  save_dir: /home/xihe/eic-project/training_output/
+  save_dir: /Users/xihehan/eic-project/training_output/

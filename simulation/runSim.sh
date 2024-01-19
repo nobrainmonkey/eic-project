@@ -1,16 +1,15 @@
-
 #!/bin/bash
 
 EICSHELL=eic-shell
 OUT_DIR=output
 mkdir -p ${OUT_DIR}
 
-ENERGY_TAB=(97 202 92 73 48 155 155 145 178 150 144 102 109 144 104 136 81 139 92 29)
+ENERGY_TAB=(0.1 0.2 0.5 1.0 2.0 5.0 10.0 15.0 20.0)
 source /opt/detector/setup.sh
 
 DETECTOR_CONFIG=epic_calorimeters
 SIZE_OF_ENERGY_TAB=${#ENERGY_TAB[@]}
-NEVENTS=$(( 50000 / SIZE_OF_ENERGY_TAB ))
+NEVENTS=15000
 
 for ene in "${ENERGY_TAB[@]}"
 do

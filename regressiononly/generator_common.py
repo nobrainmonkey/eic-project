@@ -14,9 +14,12 @@ from sklearn.neighbors import NearestNeighbors
 import random
 
 import sys
-sys.path.insert(0, '/home/xihe/eic-project/regressiononly/functions/')
+sys.path.insert(0, '/Users/xihehan/eic-project/regressiononly/functions/')
 sys.path.insert(0, './functions')
 from binning_utils import *
+
+import multiprocessing as mp
+mp.set_start_method('fork')
 
 MIP=0.0006 ## GeV
 MIP_ECAL=0.13

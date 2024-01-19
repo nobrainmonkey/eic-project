@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in {1..16}
+for i in {1..8}
 do
    bash runSim.sh &   # Run the script in the background
 done
