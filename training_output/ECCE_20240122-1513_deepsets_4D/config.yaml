@@ -1,25 +1,25 @@
 data:
-  already_preprocessed: False # True while simulating all cases
+  already_preprocessed: false
   batch_size: 256
-  calc_stats: True
+  calc_stats: true
+  condition_zsections: false
   data_dir: ../training_data_bak/
+  hadronic_detector: hcal
+  include_ecal: true
+  k: 5
+  n_zsections: null
+  num_features: 4
   num_procs: 8
+  num_test_files: 0
   num_train_files: 10
   num_val_files: 5
-  num_test_files: 0 #0
+  output_dim: 4
   output_dir: ../processed_data/
   particle_type: pion
   preprocess: true
   shuffle: false
-  num_features: 4 # Energy, z,x,y.
-  hadronic_detector: hcal #zdc_Fe
-  k: 5  # 5,10
-  n_zsections: Null
-  condition_zsections: False
-  include_ecal: True
-  output_dim: 4
 model:
-  block_type: deepsets  #deepsets #graphnet
+  block_type: deepsets
   concat_input: true
   edge_block_opt:
     use_edges: true
@@ -30,16 +30,16 @@ model:
     use_edges: false
     use_globals: true
     use_nodes: true
+  latent_size: 128
   node_block_opt:
     use_globals: true
     use_nodes: true
     use_received_edges: true
-    use_sent_edges: false # going out of the node , check get edges.
-  num_blocks: 2 # 2,3,4
-  num_layers: 4 # 2,3,4
-  latent_size:  128 #,128,256
+    use_sent_edges: false
+  num_blocks: 2
+  num_layers: 4
   reducer: mean
 training:
-  epochs: 60 # 10 epochs, 10 tr, 5 v and 5 ts
+  epochs: 60
   learning_rate: 0.001
   save_dir: ../training_output/
