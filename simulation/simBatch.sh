@@ -1,8 +1,8 @@
 #!/bin/bash
 
 EICSHELL=eic-shell
-OUT_DIR=/home/xihe/eic-project/simulation/output
-RECO_DIR=/home/xihe/eic-project/simulation/output/reco
+OUT_DIR=${HOME}/eic-project/simulation/output
+RECO_DIR=${HOME}/eic-project/simulation/output/reco
 
 mkdir -p ${OUT_DIR}
 mkdir -p ${RECO_DIR}
