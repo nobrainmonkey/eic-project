@@ -1,19 +1,20 @@
 #!/bin/bash
 
-EICSHELL=eic-shell
 OUT_DIR=${HOME}/eic-project/simulation/output
 RECO_DIR=${HOME}/eic-project/simulation/output/reco
+EXTENSION=${SLURM_ARRAY_TASK_ID}
 
 mkdir -p ${OUT_DIR}
 mkdir -p ${RECO_DIR}
 
-OUTPUT_FILE="${OUT_DIR}/MC_$$.root"
-RECO_FILE="${RECO_DIR}/RC_$$.root"
+OUTPUT_FILE="${OUT_DIR}/MC_${EXTENSION}.root"
+RECO_FILE="${RECO_DIR}/RC_${EXTENSION}.root"
 
 source /opt/detector/setup.sh
 DETECTOR_CONFIG=epic_calorimeters
 
-NEVENTS=100
+NEVENTS=15000
+
 SEED=$(date +%N)
 
 npsim --compactFile ${DETECTOR_PATH}/${DETECTOR_CONFIG}.xml --numberOfEvents ${NEVENTS} --random.seed ${SEED} --enableGun \
