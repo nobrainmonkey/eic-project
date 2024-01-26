@@ -84,7 +84,7 @@ class MPGraphDataGenerator:
         self.procs = []
 
         if(self.hadronic_detector=='hcal'):
-            self.detector_name = "HcalEndcapPHitsReco"
+            self.detector_name = "HcalEndcapNRecHits"
             self.sampling_fraction =0.0224
         elif(self.hadronic_detector=='hcal_insert'):    #'Insert' after the 'P'
             self.detector_name = "HcalEndcapPInsertHitsReco"
@@ -99,7 +99,7 @@ class MPGraphDataGenerator:
         self.scalar_keys = [self.detector_name+self.nodeFeatureNames[0]] + \
                            self.nodeFeatureNames[1:] + ["clusterE","genP"]    
 
-        self.detector_ecal='EcalEndcapPHitsReco'
+        self.detector_ecal='EcalEndcapNRecHits'
         if self.include_ecal:
             self.scalar_keys = self.scalar_keys + \
                 [self.detector_ecal+self.nodeFeatureNames[0]]
@@ -128,7 +128,7 @@ class MPGraphDataGenerator:
             if self.custom_z and self.include_ecal:
                 sys.exit("ERROR: Custom Z and include ECal NOT supported")
             self.edgesX, self.edgesY, self.edgesZ \
-            = self.get_cell_boundaries('HcalEndcapPHitsReco')
+            = self.get_cell_boundaries('HcalEndcapNRecHits')
             self.z_layers = get_equidistant_layers(self.edgesZ,
                                                    self.n_zsections)
             self.z_centers = (self.z_layers[0:-1] + self.z_layers[1:])/2

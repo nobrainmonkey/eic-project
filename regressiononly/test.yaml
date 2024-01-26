@@ -1,11 +1,11 @@
 data:
   already_preprocessed: False # True while simulating all cases
-  batch_size: 256
+  batch_size: 64
   calc_stats: True
-  data_dir: ../training_data_bak/
-  num_procs: 8
-  num_train_files: 10
-  num_val_files: 5
+  data_dir: ../training_data/
+  num_procs: 1
+  num_train_files: 6
+  num_val_files: 2
   num_test_files: 0 #0
   output_dir: ../processed_data/
   particle_type: pion
